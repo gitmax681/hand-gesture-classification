@@ -18,13 +18,31 @@ It is implemented using mediapipe and tensorflow. [more](#how-it-works)
 - First of all I recommend using a virtual env
 - Install all requirements
 - There is a pretrained model already with a few symbols. this is for a quick run and to test the code. i would staunchly recommend to [create new dataset](#train-your-data) and train with it.
+
 ```
 pip install virtualenv
 python -m virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
-python neuralModel.py
 ```
+### Neural Network Model
+make sure there is appropriate .h5 files in the model folder and a version mapping in the config file.
+
+then you can run the [NeuralModel.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/KnnModel.py)
+
+```
+python NeuralModel.py
+```
+
+### K Nearest Neighbour
+Here also make sure there is appropriate .csv files in the data folder and a version mapping to the latest dataset
+
+then run the  [KnnModel.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/KnnModel.py)
+
+```
+python KnnModel.py
+```
+
 
 ## <a name="train-your-data"></a> Train With Your data.
 before getting into creating a dataset and training, we have to understand the [config.json](https://github.com/gitmax681/hand-gesture-recognition/blob/master/config.json) file
