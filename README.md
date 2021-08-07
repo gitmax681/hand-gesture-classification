@@ -107,4 +107,8 @@ Since we have 400 of float32 data points for representing state of hand it, even
 
 Cause this is for learning purposes it won't be much of a deal.
 
-Happy Coding :heart: from Arjun Manjunath
+if you Liked The content consider giving a :star: to this repository 
+
+Happy Coding :purple_heart: 
+
+by Arjun Manjunath :blush: ..
