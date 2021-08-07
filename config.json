@@ -1,5 +1,5 @@
 {
-  "CurrentIndex": 5,
+  "CurrentIndex": 6,
   "labels": [
     "swag",
     "peace",
@@ -7,7 +7,10 @@
     "thumbs-up",
     "heart"
   ],
-  "DataVersion": 1.5000000000000002,
-  "ModelVersion": 1.1,
-  "MaxSamples": 150
+  "DataVersion": 1.1,
+  "ModelVersion": 1.0,
+  "MaxSamples": 15,
+  "CurrentModel": "model-v1.1.h5",
+  "CurrentData": "data-v1.0.csv",
+  "TryModel": ""
 }
