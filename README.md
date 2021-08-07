@@ -13,62 +13,65 @@ In the repository I have created two models, a classic machine learning model an
 
 - First of all I recommend using a virtual env
 - Install all requirements
-- There is already a pretrained model with a few symbols. this is for a quick run and test the code. i would staunchly recommend to create a new dataset [create new dataset](#train-your-data) and train with it.
-```bash
+- There is a pretrained model already with a few symbols. this is for a quick run and to test the code. i would staunchly recommend to [create new dataset](#train-your-data) and train with it.
+```
+pip install virtualenv
+python -m virtualenv venv
+source venv/bin/activate
 pip install -r requirements.txt
+python neuralModel.py
 ```
 
+## <a name="train-your-data"></a> Train With Your data.
+before getting into creating a dataset and training, we have to understand the [config.json](https://github.com/gitmax681/hand-gesture-recognition/blob/master/config.json) file
 
+```json
+{
+  "CurrentIndex": 5,
+  "labels": [
+    "swag",
+    "peace",
+    "call-me-hand",
+    "thumbs-up",
+    "heart"
+  ],
+  "DataVersion": 1.0,
+  "ModelVersion": 1.0,
+  "MaxSamples": 150,
+  "CurrentModel": "model-v1.0.h5",
+  "CurrentData": "data-v1.0.csv",
+}
+```
+this is a very crucial file, a small mistake in this would mess up whole model's predictions
 
+- CurrentIndex - used to determine the index while generating data
+- labels - used to get the acutal word from a predicted value
+- MaxSamples - determines the maximum number of data instances in a classhttps://github.com/
 
-# Patienda mittit datque
+rest of them are used for version control.
 
-## Prodere sic quati Herculis digitoque stupuit indulsit
+### <a name="create-new-dataset"></a> Create new dataset.
 
-Lorem markdownum notam sic quoque, in ungues litus visa *veluti Bacchi*? Sole et
-fontis translata celebrant mutua suo: ferrugine quod.
+To generate a new dataset we need to run the [generate.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/generate.py)
 
-## Ipsi pestiferaque iaculo Bacchi
+It would ask for a class label and runs until the maxSamples is reached. This would create a new csv file  
+Each time You update a dataset a new version of csv is created 
+```
+python generate.py
+```
+Note: An incomplete Generation would end up in adding invalid data into the config file.
 
-Et Pelia: diu sensit, cadat tamen, inermis ut verba mihi. Edax manibus quem
-tersis, portabat et humano sana priora nullasque. Dea ad vobis miserque videtur,
-[dixit praeduraque illi](http://urgetque.org/positisque); recto partus locum!
+### <a name="train-new-dataset"></a> Train the new dataset.
+Just like the dataset, each time you train a new version of ai model is created.
 
-## Facta est membra unxit quem ullos et
+Feel free to Tweak the hyper parameters, an important parameter is epoch. The defualt value is 100 you may need to tweak it according to your data, but the defualt should work fine
 
-Mihi ardua, non paterque ut Pudor pavido finita si [obscuram
-operum](http://ramis.com/adhibendus.php): omnique tamen, per auras Theseus.
-Imago virginitate undis hostes utinam. Poena maternas *suprema pinus ille* velit
-gentibus gravis color te! Quae scopulis videres fletus ripa animum figuram
-diligis manet flexos sis quem carne. Arbore illa nulla fuisses concutit quod
-sonus tradidit Epiros deae capit annosa, bene nuper Dardanio corpore
-nexilibusque facit quod.
+Note: The data used for training will be the 
+taken from config file ["CurrentData"]
 
-Latebramque **latus**, tibi *fuit*, urbe. Cum deus ex classe cernens parens
-dilectaque, et deus. Auras his votoque niveum; Arachnes
-[consule](http://www.deae.org/necsecundo) proceres soletur. Ingesta occidit.
-
-## Virga color a species esse igitur
-
-Nymphas apta tecta sidera raptor canna natis quoque albus **ad parat**. Variatis
-sentire talaribus mihi fiunt iusta, nomen **Cererisque velut Telamoniades**
-curru latas. Ab dixit et acta admonitus locum simulacraque erat, ingenium tu
-invenio, Palati saepe; decus verba conluerant nunc. Scindunt longum falsa,
-exsecrere tamen caelo mare corpus et in arma ferro raptaturque! Toto est occasus
-tibi doleret murmur [in](http://ignibus.net/) verrit mea dirusque [interserit
-hospes oblivia](http://harundo.net/) Phrygiae ultime.
-
-- Ab carmina et nomen repetiti me territa
-- Horror crine Tantalus suspirat
-- Vulnusque inposuit
-- Nectaris signum freta aequalique vident
-- E est confiteor adversos miratur ibimus
-
-Versato credidit titubantem pugnat forte pleno, insidias ulterius Marte montibus
-non emicat monte Pergama. C [te talis](http://eque.com/visa) mundi quaesita.
-
-
-## How it works.
-<a name="train-your-data"></a>
-
-## Train With Your data.
+Then you can start the training procedure by executing the [train.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/train.py)
+file
+```
+python train.python
+```
+## <a name="how-it-works"></a> How it works.
