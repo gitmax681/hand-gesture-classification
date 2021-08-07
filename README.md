@@ -2,14 +2,14 @@
 
 If you are looking for a quick hand gesture recognition model, you are at the right place.
 
-[how it works](#how-it-works)
-
 In the repository I have created two models, a classic machine learning model and a neural network model. which would help you to get started with recognition of hand gestures within no time.
 
 | id |      model      | average accuracy | file |
 |----------|:-------------:|:---:|:-------:|
 | 1 |  K Nearest Neighbour | 95.1%  | [KnnModel.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/KnnModel.py)
 | 2 |  Neural Network Model  | 97.8%|   [neuralModel.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/KnnModel.py)
+
+> :warning: This is just for understanding basics. This model may not be memory efficient and effective.
 
 ## Run Recognition
 
@@ -66,14 +66,35 @@ python generate.py
 ### <a name="train-new-dataset"></a> Train the new dataset.
 Just like the dataset, each time you train a new version of ai model is created.
 
-Feel free to Tweak the hyper parameters, an important parameter is epoch. The defualt value is 100 you may need to tweak it according to your data, but the defualt should work fine [^1]
+Feel free to Tweak the hyper parameters, an important parameter is epoch. The defualt value is 100 you may need to tweak it according to your data, but the defualt should work fine
 
 > Note: The data used for training will be the 
 taken from CurrentData in config file
 
 Then you can start the training procedure by executing the [train.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/train.py)
 file
+
 ```
 python train.py
 ```
-## How it works. {#how-it-works}
+
+This would create a new Model and update the config file.
+
+
+
+
+
+## <a name="how-it-works"></a> How it works.
+
+![hand coordinates](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)
+
+At the heart of the model is the mediapipe library from google. this computer vision library recognizes hands 
+from the video stream and create coordinates for all 20 points as shown in the picture.
+
+This 3d co-ordinate vectors are then converted into 2d x,y coordinates, and using the euclidean distance formula we get the distance between all 20 points.
+
+![euclidean distance forumula](https://bit.ly/3CsZRN9)
+
+This gives us a array of 400 values and this 400 data points represent the structure of hand.
+
+This array is then normalized between 1 and 0 and given into a feed forward neural network which would give a softmax probabilty of being each class. 
