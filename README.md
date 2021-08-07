@@ -69,12 +69,6 @@ non emicat monte Pergama. C [te talis](http://eque.com/visa) mundi quaesita.
 
 
 ## How it works.
-<div class="train-your-data">
-
-
-
-
+<a name="train-your-data"></a>
 
 ## Train With Your data.
-
-</div>
