@@ -1,12 +1,5 @@
-import cv2
-import mediapipe as mp
-import math
-import os
 import json
-import tensorflow as tf
-import numpy as np
-from utlis import scaleValue, returnDistance
-from returnvideo import main
+from init import main
 
 
 with open('config.json') as file:
