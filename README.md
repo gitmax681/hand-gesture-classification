@@ -26,7 +26,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 ### Neural Network Model
-make sure there is appropriate .h5 files in the model folder and a version mapping in the config file.
+make sure there is appropriate .pb files in the model folder and a version mapping in the config file.
 
 then you can run the [NeuralModel.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/KnnModel.py)
 
@@ -60,7 +60,7 @@ before getting into creating a dataset and training, we have to understand the [
   "DataVersion": 1.0,
   "ModelVersion": 1.0,
   "MaxSamples": 150,
-  "CurrentModel": "model-v1.0.h5",
+  "CurrentModel": "model-v1.0.pb",
   "CurrentData": "data-v1.0.csv",
 }
 ```

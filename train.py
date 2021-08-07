@@ -39,7 +39,7 @@ print(f"Loss: {test_loss}\naccuracy: {test_acc}")
 
 
 
-model.save(f'models/model-v{round(model_version+.1, 1)}.h5')
+model.save(f'models/model-v{round(model_version+.1, 1)}.pb')
 config["CurrentModel"] = f"model-v{round(model_version+.1, 1)}.h5"
 config["ModelVersion"] = round(config['ModelVersion'] + .1, 1)
 with open('config.json', 'w') as f:
