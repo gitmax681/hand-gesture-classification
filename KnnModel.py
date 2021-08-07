@@ -16,7 +16,7 @@ with open('config.json', 'r') as f:
     dataversion = _d['CurrentData']
 data = read_csv(f'data/{dataversion}', sep=',')
 y = data.iloc[:, -1]
-X = np.array(data.iloc[:, 0:-1]).astype(np.float)
+X = np.array(data.iloc[:, 0:-2]).astype(np.float)
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.25, random_state=42)
 model = KNeighborsClassifier(n_neighbors=5)

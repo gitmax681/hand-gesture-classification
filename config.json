@@ -1,16 +1,11 @@
 {
-  "CurrentIndex": 6,
+  "CurrentIndex": 0,
   "labels": [
-    "swag",
-    "peace",
-    "call-me-hand",
-    "thumbs-up",
-    "heart"
+    ""
   ],
-  "DataVersion": 1.1,
+  "DataVersion": 1.0,
   "ModelVersion": 1.0,
-  "MaxSamples": 15,
-  "CurrentModel": "model-v1.1.h5",
-  "CurrentData": "data-v1.0.csv",
-  "TryModel": ""
+  "MaxSamples": 150,
+  "CurrentModel": "model-v1.0.pb",
+  "CurrentData": "data-v1.0.csv"
 }

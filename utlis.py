@@ -107,7 +107,7 @@ def Generate(name, vectors, _):
         if _max_samples <=0:
             print('New Version Of data Created')
             _info['CurrentData'] = f"data-v{round(_info['DataVersion'],1)}.csv"
-            _info['DataVersion'] += .1
+            _info['DataVersion'] = round(_info['DataVersion']+.1,1)
             _info["CurrentIndex"] += 1
             with open('config.json', 'w') as file:
                 json.dump(_info, file, indent=2)
