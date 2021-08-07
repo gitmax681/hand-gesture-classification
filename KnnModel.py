@@ -1,3 +1,8 @@
+"""
+Note: do not tweak this code unless you know what you're doing.'
+"""
+
+
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from pandas import read_csv

@@ -1,3 +1,8 @@
+"""
+Note: do not tweak this code unless you know what you're doing.'
+"""
+
+
 import cv2
 import mediapipe as mp
 from utlis import createVector, knnModel, neuralModel, Generate

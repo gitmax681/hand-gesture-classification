@@ -1,3 +1,7 @@
+"""
+Note: do not tweak this code unless you know what you're doing.'
+"""
+
 import tensorflow as tf
 import json
 from init import main

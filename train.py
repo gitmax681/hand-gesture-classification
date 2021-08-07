@@ -1,3 +1,8 @@
+"""
+Note: do not tweak this code unless you know what you're doing.'
+"""
+
+
 from os import sep
 import tensorflow as tf
 from sklearn.model_selection import train_test_split

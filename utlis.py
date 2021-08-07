@@ -1,3 +1,8 @@
+"""
+Note: do not tweak this code unless you know what you're doing.'
+"""
+
+
 import tensorflow as tf
 import numpy as np
 import math

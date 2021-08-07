@@ -2,7 +2,7 @@
 
 If you are looking for a quick hand gesture recognition model, you are at the right place.
 
-In the repository i have created two models a classic machine learning model and a neural network model which would help you to get started with recognition of hand gestures.
+In the repository I have created two models, a classic machine learning model and a neural network model. which would help you to get started with recognition of hand gestures within no time.
 
 | id |      model      | average accuracy | file |
 |----------|:-------------:|:---:|:-------:|
@@ -14,7 +14,11 @@ In the repository i have created two models a classic machine learning model and
 - First of all I recommend using a virtual env
 - Install all requirements
 
-`pip install -r requirements.txt`
+
+
+```bash
+pip install -r requirements.txt
+```
 
 ## How it works.
 
