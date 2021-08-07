@@ -2,6 +2,8 @@
 
 If you are looking for a quick hand gesture recognition model, you are at the right place.
 
+[how it works](#how-it-works)
+
 In the repository I have created two models, a classic machine learning model and a neural network model. which would help you to get started with recognition of hand gestures within no time.
 
 | id |      model      | average accuracy | file |
@@ -59,19 +61,19 @@ Each time You update a dataset a new version of csv is created
 ```
 python generate.py
 ```
-Note: An incomplete Generation would end up in adding invalid data into the config file.
+> Note: An incomplete Generation would end up in adding invalid data into the config file.
 
 ### <a name="train-new-dataset"></a> Train the new dataset.
 Just like the dataset, each time you train a new version of ai model is created.
 
-Feel free to Tweak the hyper parameters, an important parameter is epoch. The defualt value is 100 you may need to tweak it according to your data, but the defualt should work fine
+Feel free to Tweak the hyper parameters, an important parameter is epoch. The defualt value is 100 you may need to tweak it according to your data, but the defualt should work fine [^1]
 
-Note: The data used for training will be the 
-taken from config file ["CurrentData"]
+> Note: The data used for training will be the 
+taken from CurrentData in config file
 
 Then you can start the training procedure by executing the [train.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/train.py)
 file
 ```
-python train.python
+python train.py
 ```
-## <a name="how-it-works"></a> How it works.
+## How it works. {#how-it-works}
