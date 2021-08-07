@@ -9,6 +9,8 @@ In the repository I have created two models, a classic machine learning model an
 | 1 |  K Nearest Neighbour | 95.1%  | [KnnModel.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/KnnModel.py)
 | 2 |  Neural Network Model  | 97.8%|   [neuralModel.py](https://github.com/gitmax681/hand-gesture-recognition/blob/master/KnnModel.py)
 
+It is implemented using mediapipe and tensorflow. [more](#how-it-works)
+
 > :warning: This is just for understanding basics. This model may not be memory efficient and effective.
 
 ## Run Recognition
@@ -48,7 +50,7 @@ this is a very crucial file, a small mistake in this would mess up whole model's
 
 - CurrentIndex - used to determine the index while generating data
 - labels - used to get the acutal word from a predicted value
-- MaxSamples - determines the maximum number of data instances in a classhttps://github.com/
+- MaxSamples - determines the maximum number of data instances in a class. recommended not to go above 250
 
 rest of them are used for version control.
 
@@ -83,7 +85,6 @@ This would create a new Model and update the config file.
 
 
 
-
 ## <a name="how-it-works"></a> How it works.
 
 ![hand coordinates](https://google.github.io/mediapipe/images/mobile/hand_landmarks.png)
@@ -97,4 +98,13 @@ This 3d co-ordinate vectors are then converted into 2d x,y coordinates, and usin
 
 This gives us a array of 400 values and this 400 data points represent the structure of hand.
 
-This array is then normalized between 1 and 0 and given into a feed forward neural network which would give a softmax probabilty of being each class. 
+This array is then normalized between 1 and 0 and given into a feed forward neural network which would give a softmax probabilty of being each class which is implemented in tensorflow. 
+
+
+## <a name="disadvantages"></a> Disadvantages.
+
+Since we have 400 of float32 data points for representing state of hand it, even 100 data instances would nearly make 1mb. this create a problem when we need to have more than a 20 symbols.
+
+Cause this is for learning purposes it won't be much of a deal.
+
+Happy Coding :heart: from Arjun Manjunath
